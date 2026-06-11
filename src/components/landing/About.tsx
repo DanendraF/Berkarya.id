@@ -109,17 +109,21 @@ export default function About() {
 
       <div ref={ref} className="mx-auto max-w-6xl px-6">
         <header
-          className={`mx-auto max-w-2xl text-center ${visible ? "animate-[slide-up_0.7s_ease-out_both]" : "opacity-0"}`}
+          className={`mx-auto max-w-3xl text-center ${visible ? "animate-[slide-up_0.7s_ease-out_both]" : "opacity-0"}`}
         >
           <p className="text-xs font-semibold uppercase tracking-[0.22em]" style={{ color: "var(--maroon)" }}>
-            Program
+            Tentang Program
           </p>
           <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
-            Apa yang bakal lo <span className="text-gradient-gold">dapet?</span>
+            Inkubasi Intensif Wujudkan <span className="text-gradient-gold">Karya Nyata</span>
           </h2>
-          <p className="mt-4 text-base text-muted-foreground">
-            Empat pilar yang dirancang biar lo nggak cuma belajar - tapi benar-benar ngirim karya.
+          <p className="mt-4 text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Berkarya.id adalah wadah inkubasi gratis yang mendampingi kreator muda Indonesia dari tahap ide kasar hingga menghasilkan proyek perdana dalam 7 hari. Melalui bimbingan langsung, akses tools premium, dan jejaring kerja, kami mendampingimu keluar dari sekadar belajar teori dan mulai membangun portofolio nyata yang kredibel.
           </p>
+          <div className="mt-8 inline-block h-px w-16 bg-[var(--maroon)] opacity-20" />
+          <h3 className="mt-6 text-xl font-bold tracking-tight md:text-2xl">
+            Fasilitas & Benefit Inkubasi:
+          </h3>
         </header>
 
         {/* Feature grid */}
