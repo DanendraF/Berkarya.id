@@ -370,23 +370,12 @@ type Karya = {
 
 function getGridClasses(index: number, total: number): string {
   if (total === 1) {
-    return "md:col-span-3 md:row-span-2";
+    return "md:col-span-2 md:row-span-2";
   }
-  if (total === 2) {
-    if (index === 0) return "md:col-span-2 md:row-span-2";
-    return "md:col-span-1 md:row-span-2";
+  if (total === 3 && index === 0) {
+    return "md:col-span-2 md:row-span-2";
   }
-  if (total === 3) {
-    if (index === 0) return "md:col-span-2 md:row-span-2";
-    return "md:row-span-1";
-  }
-  if (total === 4) {
-    if (index === 0) return "md:col-span-2 md:row-span-2";
-    if (index === 3) return "md:col-span-3 md:row-span-1";
-    return "md:row-span-1";
-  }
-  if (index === 0) return "md:col-span-2 md:row-span-2";
-  return "md:row-span-1";
+  return "md:col-span-1 md:row-span-1";
 }
 
 function KaryaGrid({ items }: { items: Karya[] }) {
@@ -418,10 +407,10 @@ function KaryaGrid({ items }: { items: Karya[] }) {
         })}
       </div>
 
-      {/* Bento layout: featured + grid */}
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:auto-rows-[240px]">
+      {/* 2-Column layout to balance the cards */}
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:auto-rows-[320px]">
         {filtered.map((k, i) => {
-          const featured = i === 0 || (filtered.length === 4 && i === 3) || (filtered.length === 1);
+          const featured = (filtered.length === 1) || (filtered.length === 3 && i === 0);
           return (
             <KaryaCard
               key={k.title}
